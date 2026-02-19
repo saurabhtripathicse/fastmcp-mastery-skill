@@ -15,6 +15,8 @@ from pathlib import Path
 SKILL_NAME = "fastmcp-mastery"
 PROJECT_SKILL_REL = Path(".agents") / "skills" / SKILL_NAME
 CLAUDE_SKILL_REL = Path(".claude") / "skills" / SKILL_NAME
+WINDSURF_SKILL_REL = Path(".windsurf") / "skills" / SKILL_NAME
+WINDSURF_GLOBAL_SKILL_REL = Path(".codeium") / "windsurf" / "skills" / SKILL_NAME
 SOURCE_ITEMS = ("SKILL.md", "agents", "references", "scripts", "LICENSE")
 
 ALL_PLATFORMS = {"claude", "codex", "replit", "cursor", "windsurf", "cline"}
@@ -109,6 +111,15 @@ def install_windsurf_rule(
     write_text(destination, content, dry_run=dry_run)
 
 
+def install_windsurf_skill(
+    source_root: Path,
+    destination_root: Path,
+    clean: bool,
+    dry_run: bool,
+) -> None:
+    copy_source_items(source_root, destination_root, clean=clean, dry_run=dry_run)
+
+
 def install_cline_rule(
     templates_root: Path,
     project_root: Path,
@@ -120,7 +131,6 @@ def install_cline_rule(
     start = "<!-- FASTMCP-MASTERY:START -->"
     end = "<!-- FASTMCP-MASTERY:END -->"
     block = f"{start}\n{body}\n{end}\n"
-
     destination = project_root / ".clinerules"
     if destination.exists():
         existing = destination.read_text()
@@ -182,6 +192,14 @@ def main() -> None:
         claude_dest = home_root / CLAUDE_SKILL_REL
         print("\n== Installing for Claude Code ==")
         copy_source_items(skill_root, claude_dest, clean=args.clean, dry_run=args.dry_run)
+        claude_project_dest = project_root / CLAUDE_SKILL_REL
+        print("\n== Installing for Claude Code (project scope) ==")
+        copy_source_items(skill_root, claude_project_dest, clean=args.clean, dry_run=args.dry_run)
+
+    if "codex" in selected:
+        codex_user_dest = home_root / PROJECT_SKILL_REL
+        print("\n== Installing for Codex (user scope) ==")
+        copy_source_items(skill_root, codex_user_dest, clean=args.clean, dry_run=args.dry_run)
 
     if selected & PROJECT_PLATFORMS:
         project_skill_dest = project_root / PROJECT_SKILL_REL
@@ -193,6 +211,20 @@ def main() -> None:
         install_cursor_rule(templates_root, project_root, skill_rel, dry_run=args.dry_run)
 
     if "windsurf" in selected:
+        print("\n== Installing Windsurf native skill ==")
+        install_windsurf_skill(
+            skill_root,
+            project_root / WINDSURF_SKILL_REL,
+            clean=args.clean,
+            dry_run=args.dry_run,
+        )
+        print("\n== Installing Windsurf native skill (global) ==")
+        install_windsurf_skill(
+            skill_root,
+            home_root / WINDSURF_GLOBAL_SKILL_REL,
+            clean=args.clean,
+            dry_run=args.dry_run,
+        )
         print("\n== Installing Windsurf rule ==")
         install_windsurf_rule(templates_root, project_root, skill_rel, dry_run=args.dry_run)
 

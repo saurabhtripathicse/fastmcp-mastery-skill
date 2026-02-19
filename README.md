@@ -62,8 +62,12 @@ python3 scripts/install_platform_adapters.py --platforms all --project /path/to/
 
 What this command installs:
 
-- `Claude`: `~/.claude/skills/fastmcp-mastery`
+- `Claude (personal)`: `~/.claude/skills/fastmcp-mastery`
+- `Claude (project)`: `/path/to/your/project/.claude/skills/fastmcp-mastery`
+- `Codex (personal)`: `~/.agents/skills/fastmcp-mastery`
 - `Codex/Replit/Project skill bundle`: `/path/to/your/project/.agents/skills/fastmcp-mastery`
+- `Windsurf native skill`: `/path/to/your/project/.windsurf/skills/fastmcp-mastery`
+- `Windsurf native skill (global)`: `~/.codeium/windsurf/skills/fastmcp-mastery`
 - `Cursor` rule: `/path/to/your/project/.cursor/rules/fastmcp-mastery.mdc`
 - `Windsurf` rule: `/path/to/your/project/.windsurf/rules/fastmcp-mastery.md`
 - `Cline` block: `/path/to/your/project/.clinerules`
