@@ -261,6 +261,38 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+## 21) OpenAI Sampling With `.env`
+
+```python
+import asyncio
+import os
+from dotenv import load_dotenv
+from fastmcp import Client, Context, FastMCP
+from fastmcp.client.sampling.handlers.openai import OpenAISamplingHandler
+
+load_dotenv()  # expects OPENAI_API_KEY in .env
+
+mcp = FastMCP("OpenAI Sampling Demo")
+
+@mcp.tool
+async def summarize(text: str, ctx: Context) -> str:
+    result = await ctx.sample(
+        messages=f"Summarize this:\n\n{text}",
+        system_prompt="Return 3 concise bullet points.",
+        max_tokens=180,
+    )
+    return result.text or ""
+
+async def main() -> None:
+    handler = OpenAISamplingHandler(
+        default_model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+    )
+    async with Client(mcp, sampling_handler=handler) as client:
+        print(await client.call_tool("summarize", {"text": "Your long text here"}))
+
+asyncio.run(main())
+```
+
 ## Source Alignment
 
 Before copying snippets into production code, align with:
