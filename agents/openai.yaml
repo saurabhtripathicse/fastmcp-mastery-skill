@@ -1,0 +1,4 @@
+interface:
+  display_name: "FastMCP Mastery"
+  short_description: "Build, debug, and scale FastMCP servers and clients"
+  default_prompt: "Use this skill to design, implement, and troubleshoot FastMCP projects end-to-end."
