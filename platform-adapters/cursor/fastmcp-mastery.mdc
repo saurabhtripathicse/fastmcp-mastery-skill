@@ -1,6 +1,5 @@
 ---
 description: Use fastmcp-mastery workflow for FastMCP tasks.
-globs:
 alwaysApply: false
 ---
 Apply this rule when a request involves FastMCP servers/clients, transports, auth/OAuth, providers, transforms, tasks, or CLI/config.
