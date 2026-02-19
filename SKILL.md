@@ -46,7 +46,6 @@ If one path is missing, continue with available artifacts and state the gap.
 | "Need examples/tests by topic" | `references/13-examples-tests-matrix-generated.md` |
 | "Need large-scale navigation strategy" | `references/14-super-big-navigation.md` |
 | "Need intent to execution mapping" | `references/15-intent-to-workflow-map.md` |
-| "Need website feature coverage verification" | `references/16-feature-coverage-report-generated.md` |
 
 ## Crosswalk Maintenance
 Regenerate the full local crosswalk and super-big indexes when repository contents change:
@@ -54,7 +53,6 @@ Regenerate the full local crosswalk and super-big indexes when repository conten
 ```bash
 python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_fastmcp_crosswalk.py
 python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_super_big_references.py
-python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_feature_coverage_report.py
 ```
 
 Generated output:
@@ -64,7 +62,6 @@ Generated output:
 - `references/11-python-sdk-full-index-generated.md`
 - `references/12-source-reverse-index-generated.md`
 - `references/13-examples-tests-matrix-generated.md`
-- `references/16-feature-coverage-report-generated.md`
 
 ## Fast Path Commands
 Use these commands for high-speed navigation:
