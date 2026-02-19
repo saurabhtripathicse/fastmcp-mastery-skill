@@ -48,7 +48,7 @@
 Run this command to produce a complete machine-generated mapping table for every file:
 
 ```bash
-python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_fastmcp_crosswalk.py
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
 ```
 
 Generated file:

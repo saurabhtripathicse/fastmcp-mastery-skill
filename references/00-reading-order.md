@@ -30,8 +30,8 @@ Use this guide to analyze FastMCP quickly without loading all docs at once.
 
 ## High-Signal Paths
 
-- Primary docs mirror: `/Users/saurabhtripathi/project-zero/fastmcpdocs`
-- Canonical docs source: `/Users/saurabhtripathi/project-zero/fastmcp-main/docs`
-- Python SDK source: `/Users/saurabhtripathi/project-zero/fastmcp-main/src/fastmcp`
-- Runnable examples: `/Users/saurabhtripathi/project-zero/fastmcp-main/examples`
-- Behavioral contract: `/Users/saurabhtripathi/project-zero/fastmcp-main/tests`
+- Primary docs mirror: `fastmcpdocs`
+- Canonical docs source: `fastmcp-main/docs`
+- Python SDK source: `fastmcp-main/src/fastmcp`
+- Runnable examples: `fastmcp-main/examples`
+- Behavioral contract: `fastmcp-main/tests`

@@ -435,27 +435,33 @@ def build_examples_tests_matrix(
 
 
 def main() -> None:
+    script_dir = Path(__file__).resolve().parent
+    skill_root = script_dir.parent
+    default_docs_root = Path.cwd() / "fastmcpdocs"
+    default_source_repo = Path.cwd() / "fastmcp-main"
+    default_output_dir = skill_root / "references"
+
     parser = argparse.ArgumentParser(description="Generate super-big FastMCP reference artifacts.")
     parser.add_argument(
         "--docs-root",
-        default="/Users/saurabhtripathi/project-zero/fastmcpdocs",
+        default=str(default_docs_root),
         help="Path to fastmcpdocs",
     )
     parser.add_argument(
         "--source-repo",
-        default="/Users/saurabhtripathi/project-zero/fastmcp-main",
+        default=str(default_source_repo),
         help="Path to fastmcp-main",
     )
     parser.add_argument(
         "--output-dir",
-        default="/Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/references",
+        default=str(default_output_dir),
         help="Output references directory",
     )
     args = parser.parse_args()
 
-    docs_root = Path(args.docs_root).resolve()
-    source_repo = Path(args.source_repo).resolve()
-    output_dir = Path(args.output_dir).resolve()
+    docs_root = Path(args.docs_root).expanduser()
+    source_repo = Path(args.source_repo).expanduser()
+    output_dir = Path(args.output_dir).expanduser()
 
     source_docs_root = source_repo / "docs"
     source_src_root = source_repo / "src"

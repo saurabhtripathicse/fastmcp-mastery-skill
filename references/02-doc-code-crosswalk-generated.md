@@ -1,11 +1,11 @@
 # Generated FastMCP Crosswalk
 
-Generated at: `2026-02-19 19:44:34Z`
+Generated at: `2026-02-19 20:09:50Z`
 
 ## Inputs
 
-- docs root: `/Users/saurabhtripathi/project-zero/fastmcpdocs`
-- source repo: `/Users/saurabhtripathi/project-zero/fastmcp-main`
+- docs root: `../../fastmcpdocs`
+- source repo: `../../fastmcp-main`
 
 ## High-Level Totals
 

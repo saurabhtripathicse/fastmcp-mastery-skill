@@ -51,8 +51,8 @@ If one path is missing, continue with available artifacts and state the gap.
 Regenerate the full local crosswalk and super-big indexes when repository contents change:
 
 ```bash
-python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_fastmcp_crosswalk.py
-python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_super_big_references.py
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
+python3 scripts/build_super_big_references.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
 ```
 
 Generated output:
@@ -67,11 +67,11 @@ Generated output:
 Use these commands for high-speed navigation:
 
 ```bash
-rg --files /Users/saurabhtripathi/project-zero/fastmcp-main/src/fastmcp
-rg --files /Users/saurabhtripathi/project-zero/fastmcp-main/examples
-rg --files /Users/saurabhtripathi/project-zero/fastmcp-main/tests
-rg "class FastMCP|def create_proxy" /Users/saurabhtripathi/project-zero/fastmcp-main/src/fastmcp/server/server.py
-rg "class Client|def call_tool" /Users/saurabhtripathi/project-zero/fastmcp-main/src/fastmcp/client/client.py
+rg --files /path/to/fastmcp-main/src/fastmcp
+rg --files /path/to/fastmcp-main/examples
+rg --files /path/to/fastmcp-main/tests
+rg "class FastMCP|def create_proxy" /path/to/fastmcp-main/src/fastmcp/server/server.py
+rg "class Client|def call_tool" /path/to/fastmcp-main/src/fastmcp/client/client.py
 ```
 
 ## Output Standard

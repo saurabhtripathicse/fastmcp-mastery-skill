@@ -41,15 +41,15 @@ Use this guide to query very large FastMCP documentation quickly without loading
 
 ```bash
 # Search within generated references
-rg "server\.auth\.providers" /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/references/11-python-sdk-full-index-generated.md
-rg "providers-proxy" /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/references/13-examples-tests-matrix-generated.md
+rg "server\.auth\.providers" references/11-python-sdk-full-index-generated.md
+rg "providers-proxy" references/13-examples-tests-matrix-generated.md
 
 # Search source + tests together
-rg "OAuthProxy|OIDC|TokenVerifier" /Users/saurabhtripathi/project-zero/fastmcp-main/src/fastmcp /Users/saurabhtripathi/project-zero/fastmcp-main/tests
+rg "OAuthProxy|OIDC|TokenVerifier" /path/to/fastmcp-main/src/fastmcp /path/to/fastmcp-main/tests
 
 # Refresh all generated indexes
-python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_fastmcp_crosswalk.py
-python3 /Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/scripts/build_super_big_references.py
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
+python3 scripts/build_super_big_references.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
 ```
 
 ## Practical Rule

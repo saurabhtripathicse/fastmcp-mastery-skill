@@ -181,27 +181,33 @@ def build_markdown(
 
 
 def main() -> None:
+    script_dir = Path(__file__).resolve().parent
+    skill_root = script_dir.parent
+    default_docs_root = Path.cwd() / "fastmcpdocs"
+    default_source_repo = Path.cwd() / "fastmcp-main"
+    default_output = skill_root / "references" / "02-doc-code-crosswalk-generated.md"
+
     parser = argparse.ArgumentParser(description="Generate a FastMCP docs-to-code crosswalk file.")
     parser.add_argument(
         "--docs-root",
-        default="/Users/saurabhtripathi/project-zero/fastmcpdocs",
+        default=str(default_docs_root),
         help="Path to fastmcpdocs directory",
     )
     parser.add_argument(
         "--source-repo",
-        default="/Users/saurabhtripathi/project-zero/fastmcp-main",
+        default=str(default_source_repo),
         help="Path to fastmcp-main repository root",
     )
     parser.add_argument(
         "--output",
-        default="/Users/saurabhtripathi/project-zero/skills/fastmcp-mastery/references/02-doc-code-crosswalk-generated.md",
+        default=str(default_output),
         help="Output markdown file path",
     )
     args = parser.parse_args()
 
-    docs_root = Path(args.docs_root).resolve()
-    source_repo = Path(args.source_repo).resolve()
-    output_file = Path(args.output).resolve()
+    docs_root = Path(args.docs_root).expanduser()
+    source_repo = Path(args.source_repo).expanduser()
+    output_file = Path(args.output).expanduser()
 
     if not docs_root.exists():
         raise SystemExit(f"docs root not found: {docs_root}")

@@ -37,11 +37,11 @@ High-volume areas:
 
 ```bash
 # Fast search in source/tests
-rg "pattern" /Users/saurabhtripathi/project-zero/fastmcp-main/src/fastmcp
-rg "pattern" /Users/saurabhtripathi/project-zero/fastmcp-main/tests
+rg "pattern" /path/to/fastmcp-main/src/fastmcp
+rg "pattern" /path/to/fastmcp-main/tests
 
 # Example: run focused server auth tests
-cd /Users/saurabhtripathi/project-zero/fastmcp-main
+cd /path/to/fastmcp-main
 uv run pytest tests/server/auth -q
 
 # Example: run focused client tests

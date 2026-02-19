@@ -34,7 +34,7 @@ python3 scripts/build_super_big_references.py
 ## Validate Skill
 
 ```bash
-python3 /Users/saurabhtripathi/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 "$CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" .
 ```
 
 ## Repository Notes
