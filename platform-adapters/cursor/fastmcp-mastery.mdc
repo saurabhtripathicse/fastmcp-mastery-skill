@@ -1,0 +1,11 @@
+---
+description: Use fastmcp-mastery workflow for FastMCP tasks.
+globs:
+alwaysApply: false
+---
+Apply this rule when a request involves FastMCP servers/clients, transports, auth/OAuth, providers, transforms, tasks, or CLI/config.
+
+1. Load `__SKILL_PATH__/SKILL.md`.
+2. Route to the smallest matching reference from `__SKILL_PATH__/references/`.
+3. Ground output with concrete docs, source, example, and test paths.
+4. Prefer runnable snippets over speculative guidance.

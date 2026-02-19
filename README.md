@@ -15,6 +15,8 @@ No specific directory names are required. `docs` and `repo` are logical inputs, 
 - `references/`: playbooks, snippet library, generated indexes, and feature coverage map
 - `scripts/build_fastmcp_crosswalk.py`: generates docs-to-code crosswalk
 - `scripts/build_super_big_references.py`: generates large indexes for guides, SDK pages, source reverse map, and examples/tests matrix
+- `scripts/install_platform_adapters.py`: GitHub-only installer for Claude/Codex/Replit/Cursor/Windsurf/Cline
+- `platform-adapters/`: rule templates used by the installer
 
 ## Key Reference Artifacts
 
@@ -46,6 +48,36 @@ python3 "$CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" .
 python3 "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
   --url https://github.com/<owner>/<repo>.git \
   --method git
+```
+
+## GitHub-Only Multi-Platform Install
+
+Clone once, then install everywhere from this repo:
+
+```bash
+git clone https://github.com/saurabhtripathicse/fastmcp-mastery-skill.git
+cd fastmcp-mastery-skill
+python3 scripts/install_platform_adapters.py --platforms all --project /path/to/your/project --clean
+```
+
+What this command installs:
+
+- `Claude`: `~/.claude/skills/fastmcp-mastery`
+- `Codex/Replit/Project skill bundle`: `/path/to/your/project/.agents/skills/fastmcp-mastery`
+- `Cursor` rule: `/path/to/your/project/.cursor/rules/fastmcp-mastery.mdc`
+- `Windsurf` rule: `/path/to/your/project/.windsurf/rules/fastmcp-mastery.md`
+- `Cline` block: `/path/to/your/project/.clinerules`
+
+Install selected platforms only:
+
+```bash
+python3 scripts/install_platform_adapters.py --platforms claude,cursor,windsurf --project /path/to/your/project
+```
+
+Preview without writing files:
+
+```bash
+python3 scripts/install_platform_adapters.py --platforms all --project /path/to/your/project --dry-run
 ```
 
 ## Repository Notes
