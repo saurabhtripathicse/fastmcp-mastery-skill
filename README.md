@@ -12,17 +12,18 @@ No specific directory names are required. `docs` and `repo` are logical inputs, 
 ## Contents
 
 - `SKILL.md`: main routing and execution guidance
-- `references/`: playbooks, snippet library, and generated indexes
+- `references/`: playbooks, snippet library, generated indexes, and feature coverage map
 - `scripts/build_fastmcp_crosswalk.py`: generates docs-to-code crosswalk
 - `scripts/build_super_big_references.py`: generates large indexes for guides, SDK pages, source reverse map, and examples/tests matrix
 
-## Key Generated Artifacts
+## Key Reference Artifacts
 
 - `references/02-doc-code-crosswalk-generated.md`
 - `references/10-guides-full-index-generated.md`
 - `references/11-python-sdk-full-index-generated.md`
 - `references/12-source-reverse-index-generated.md`
 - `references/13-examples-tests-matrix-generated.md`
+- `references/16-feature-coverage-map.md` (maintained checklist)
 
 ## Regenerate Indexes
 

@@ -1,5 +1,12 @@
 # Auth, Providers, Transforms, And Tasks
 
+## Table of Contents
+
+- [Authentication And Authorization](#authentication-and-authorization)
+- [Providers](#providers)
+- [Transforms And Visibility](#transforms-and-visibility)
+- [Tasks And Long-Running Work](#tasks-and-long-running-work)
+
 ## Authentication And Authorization
 
 ### Docs to read

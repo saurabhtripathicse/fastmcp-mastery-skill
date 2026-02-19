@@ -2,6 +2,31 @@
 
 All snippets are intentionally minimal and designed for quick adaptation.
 
+## Table of Contents
+
+- [1) Minimal Server With One Tool](#1-minimal-server-with-one-tool)
+- [2) Add Resource And Prompt](#2-add-resource-and-prompt)
+- [3) Run Server Over HTTP](#3-run-server-over-http)
+- [4) Async Client Tool Call](#4-async-client-tool-call)
+- [5) Run Server Via CLI](#5-run-server-via-cli)
+- [6) Discover And Invoke With CLI](#6-discover-and-invoke-with-cli)
+- [7) Create A Proxy Server](#7-create-a-proxy-server)
+- [8) Basic Test Skeleton](#8-basic-test-skeleton)
+- [9) Strict Input Validation Mode](#9-strict-input-validation-mode)
+- [10) Server-Level Pagination](#10-server-level-pagination)
+- [11) Add Logging Middleware](#11-add-logging-middleware)
+- [12) Add Timing Middleware](#12-add-timing-middleware)
+- [13) Add Namespace Transform](#13-add-namespace-transform)
+- [14) Add Resources-As-Tools Transform](#14-add-resources-as-tools-transform)
+- [15) Add Prompts-As-Tools Transform](#15-add-prompts-as-tools-transform)
+- [16) Add Filesystem Provider](#16-add-filesystem-provider)
+- [17) Mount One Server Into Another](#17-mount-one-server-into-another)
+- [18) Client Against In-Process Server](#18-client-against-in-process-server)
+- [19) Client Bearer Token Auth](#19-client-bearer-token-auth)
+- [20) Client OAuth Shortcut](#20-client-oauth-shortcut)
+- [21) OpenAI Sampling With `.env`](#21-openai-sampling-with-env)
+- [Source Alignment](#source-alignment)
+
 ## 1) Minimal Server With One Tool
 
 ```python

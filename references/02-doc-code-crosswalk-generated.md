@@ -2,6 +2,17 @@
 
 Generated at: `2026-02-19 20:23:15Z`
 
+## Table of Contents
+
+- [Inputs](#inputs)
+- [High-Level Totals](#high-level-totals)
+- [Docs Root Folder File Counts](#docs-root-folder-file-counts)
+- [`python-sdk` Group Counts](#python-sdk-group-counts)
+- [Examples Folder Coverage](#examples-folder-coverage)
+- [Tests Folder Coverage](#tests-folder-coverage)
+- [Non-`python-sdk` Doc to Source-Docs Mapping](#non-python-sdk-doc-to-source-docs-mapping)
+- [`python-sdk` Doc to Source-Code Mapping](#python-sdk-doc-to-source-code-mapping)
+
 ## Inputs
 
 - docs root: provided via `--docs-root`
