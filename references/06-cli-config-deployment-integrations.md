@@ -4,17 +4,17 @@
 
 ### Docs
 
-- `fastmcpdocs/clients/cli.md`
-- `fastmcpdocs/clients/generate-cli.md`
-- `fastmcpdocs/patterns/cli.md`
+- `clients/cli.md`
+- `clients/generate-cli.md`
+- `patterns/cli.md`
 
 ### Source
 
-- `fastmcp-main/src/fastmcp/cli/cli.py`
-- `fastmcp-main/src/fastmcp/cli/run.py`
-- `fastmcp-main/src/fastmcp/cli/client.py`
-- `fastmcp-main/src/fastmcp/cli/discovery.py`
-- `fastmcp-main/src/fastmcp/cli/install`
+- `src/fastmcp/cli/cli.py`
+- `src/fastmcp/cli/run.py`
+- `src/fastmcp/cli/client.py`
+- `src/fastmcp/cli/discovery.py`
+- `src/fastmcp/cli/install`
 
 ### Notes
 
@@ -24,32 +24,32 @@ Use CLI for discovery, list/call workflows, and installation shortcuts for deskt
 
 ### Docs
 
-- `fastmcpdocs/integrations/mcp-json-configuration.md`
-- `fastmcpdocs/deployment/server-configuration.md`
+- `integrations/mcp-json-configuration.md`
+- `deployment/server-configuration.md`
 
 ### Source
 
-- `fastmcp-main/src/fastmcp/mcp_config.py`
-- `fastmcp-main/src/fastmcp/utilities/mcp_server_config/v1`
+- `src/fastmcp/mcp_config.py`
+- `src/fastmcp/utilities/mcp_server_config/v1`
 
 ### Examples
 
-- `fastmcp-main/examples/fastmcp_config`
-- `fastmcp-main/examples/fastmcp_config_demo`
+- `examples/fastmcp_config`
+- `examples/fastmcp_config_demo`
 
 ## Deployment And Runtime
 
 ### Docs
 
-- `fastmcpdocs/deployment/running-server.md`
-- `fastmcpdocs/deployment/http.md`
-- `fastmcpdocs/deployment/prefect-horizon.md`
+- `deployment/running-server.md`
+- `deployment/http.md`
+- `deployment/prefect-horizon.md`
 
 ### Source
 
-- `fastmcp-main/src/fastmcp/server/http.py`
-- `fastmcp-main/src/fastmcp/settings.py`
-- `fastmcp-main/src/fastmcp/server/telemetry.py`
+- `src/fastmcp/server/http.py`
+- `src/fastmcp/settings.py`
+- `src/fastmcp/server/telemetry.py`
 
 ### Validation
 
@@ -57,7 +57,7 @@ Use server integration tests for transport-level behavior before deploying.
 
 ## Integrations
 
-`fastmcpdocs/integrations` is mostly environment-specific setup guidance.
+`integrations` is mostly environment-specific setup guidance.
 
 ### High-value integration docs
 

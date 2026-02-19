@@ -45,11 +45,12 @@ rg "server\.auth\.providers" references/11-python-sdk-full-index-generated.md
 rg "providers-proxy" references/13-examples-tests-matrix-generated.md
 
 # Search source + tests together
-rg "OAuthProxy|OIDC|TokenVerifier" /path/to/fastmcp-main/src/fastmcp /path/to/fastmcp-main/tests
+cd /path/to/repo
+rg "OAuthProxy|OIDC|TokenVerifier" src/fastmcp tests
 
 # Refresh all generated indexes
-python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
-python3 scripts/build_super_big_references.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/docs --source-repo /path/to/repo
+python3 scripts/build_super_big_references.py --docs-root /path/to/docs --source-repo /path/to/repo
 ```
 
 ## Practical Rule

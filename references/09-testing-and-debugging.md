@@ -6,11 +6,11 @@ FastMCP test coverage is broad and should be treated as behavior contracts.
 
 High-volume areas:
 
-- `fastmcp-main/tests/server` (largest surface)
-- `fastmcp-main/tests/client`
-- `fastmcp-main/tests/utilities`
-- `fastmcp-main/tests/tools`
-- `fastmcp-main/tests/cli`
+- `tests/server` (largest surface)
+- `tests/client`
+- `tests/utilities`
+- `tests/tools`
+- `tests/cli`
 
 ## Subsystem Test Mapping
 
@@ -37,11 +37,11 @@ High-volume areas:
 
 ```bash
 # Fast search in source/tests
-rg "pattern" /path/to/fastmcp-main/src/fastmcp
-rg "pattern" /path/to/fastmcp-main/tests
+cd /path/to/repo
+rg "pattern" src/fastmcp
+rg "pattern" tests
 
 # Example: run focused server auth tests
-cd /path/to/fastmcp-main
 uv run pytest tests/server/auth -q
 
 # Example: run focused client tests

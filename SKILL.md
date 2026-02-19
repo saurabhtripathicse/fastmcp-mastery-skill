@@ -1,6 +1,6 @@
 ---
 name: fastmcp-mastery
-description: Comprehensive FastMCP implementation, debugging, and integration guide that maps fastmcpdocs pages to fastmcp-main source code, tests, and examples. Use when building or extending FastMCP servers or clients, choosing transports, configuring auth/OAuth, working with providers/transforms/tasks, migrating versions, or troubleshooting behavior seen in FastMCP docs and Python code.
+description: FastMCP-only implementation and debugging workflow that maps docs pages to source code, examples, and tests. Use when building or extending FastMCP servers/clients, transports, auth/OAuth, providers/transforms/tasks, CLI/config, or when reducing hallucination risk by grounding answers in code.
 ---
 
 # FastMCP Mastery
@@ -8,20 +8,20 @@ description: Comprehensive FastMCP implementation, debugging, and integration gu
 ## Overview
 Use this skill to connect FastMCP documentation to the actual Python implementation and examples. Route each request to the smallest relevant reference file, then verify behavior in source code and tests before implementing changes.
 
-## Verify Workspace Inputs
-Confirm these paths exist before deep analysis:
+## Optional Local Validation Inputs
+This skill is self-contained. If local FastMCP checkouts are available, use them to validate behavior:
 
-- `fastmcpdocs`
-- `fastmcp-main`
+- docs markers: `python-sdk/`, `getting-started/`, guide markdown tree
+- source markers: `src/fastmcp/`, `examples/`, `tests/`
 
-If one path is missing, continue with available artifacts and state the gap.
+If those local checkouts are unavailable, rely on bundled references in this skill.
 
 ## Execution Workflow
 
 1. Classify the request.
 2. Load only the matching reference file from `references/`.
 3. Jump from docs to code using `references/02-doc-code-crosswalk.md`.
-4. Validate assumptions against `fastmcp-main/tests` and `fastmcp-main/examples`.
+4. Validate assumptions against `tests` and `examples`.
 5. Implement or explain using runnable snippets from `references/08-snippet-library.md`.
 6. For large-scope tasks, use the generated super-big indexes.
 7. Refresh generated artifacts when needed.
@@ -46,13 +46,14 @@ If one path is missing, continue with available artifacts and state the gap.
 | "Need examples/tests by topic" | `references/13-examples-tests-matrix-generated.md` |
 | "Need large-scale navigation strategy" | `references/14-super-big-navigation.md` |
 | "Need intent to execution mapping" | `references/15-intent-to-workflow-map.md` |
+| "Need feature checklist coverage" | `references/16-feature-coverage-map.md` |
 
 ## Crosswalk Maintenance
 Regenerate the full local crosswalk and super-big indexes when repository contents change:
 
 ```bash
-python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
-python3 scripts/build_super_big_references.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/docs --source-repo /path/to/repo
+python3 scripts/build_super_big_references.py --docs-root /path/to/docs --source-repo /path/to/repo
 ```
 
 Generated output:
@@ -67,17 +68,18 @@ Generated output:
 Use these commands for high-speed navigation:
 
 ```bash
-rg --files /path/to/fastmcp-main/src/fastmcp
-rg --files /path/to/fastmcp-main/examples
-rg --files /path/to/fastmcp-main/tests
-rg "class FastMCP|def create_proxy" /path/to/fastmcp-main/src/fastmcp/server/server.py
-rg "class Client|def call_tool" /path/to/fastmcp-main/src/fastmcp/client/client.py
+cd /path/to/repo
+rg --files src/fastmcp
+rg --files examples
+rg --files tests
+rg "class FastMCP|def create_proxy" src/fastmcp/server/server.py
+rg "class Client|def call_tool" src/fastmcp/client/client.py
 ```
 
 ## Output Standard
 When producing guidance or code changes, include:
 
-- Relevant docs path from `fastmcpdocs`
-- Matching source path from `fastmcp-main/src/fastmcp`
-- At least one example path from `fastmcp-main/examples`
-- At least one test path from `fastmcp-main/tests` for expected behavior
+- Relevant docs page path
+- Matching source path from `src/fastmcp`
+- At least one example path from `examples`
+- At least one test path from `tests` for expected behavior

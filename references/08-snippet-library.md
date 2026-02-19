@@ -265,7 +265,7 @@ asyncio.run(main())
 
 Before copying snippets into production code, align with:
 
-- `fastmcp-main/src/fastmcp/server/server.py`
-- `fastmcp-main/src/fastmcp/client/client.py`
-- `fastmcp-main/examples`
-- `fastmcp-main/tests`
+- `src/fastmcp/server/server.py`
+- `src/fastmcp/client/client.py`
+- `examples`
+- `tests`

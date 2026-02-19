@@ -4,20 +4,20 @@
 
 Start here for server work:
 
-- `fastmcpdocs/servers/server.md`
-- `fastmcpdocs/servers/tools.md`
-- `fastmcpdocs/servers/resources.md`
-- `fastmcpdocs/servers/prompts.md`
-- `fastmcpdocs/servers/context.md`
+- `servers/server.md`
+- `servers/tools.md`
+- `servers/resources.md`
+- `servers/prompts.md`
+- `servers/context.md`
 
 ## Core Source Modules
 
-- Server entry: `fastmcp-main/src/fastmcp/server/server.py`
-- Runtime context: `fastmcp-main/src/fastmcp/server/context.py`
-- Dependency wiring: `fastmcp-main/src/fastmcp/server/dependencies.py`
-- Low-level wrapper: `fastmcp-main/src/fastmcp/server/low_level.py`
-- HTTP runtime: `fastmcp-main/src/fastmcp/server/http.py`
-- Lifespan: `fastmcp-main/src/fastmcp/server/lifespan.py`
+- Server entry: `src/fastmcp/server/server.py`
+- Runtime context: `src/fastmcp/server/context.py`
+- Dependency wiring: `src/fastmcp/server/dependencies.py`
+- Low-level wrapper: `src/fastmcp/server/low_level.py`
+- HTTP runtime: `src/fastmcp/server/http.py`
+- Lifespan: `src/fastmcp/server/lifespan.py`
 
 ## Core Components Model
 
@@ -60,17 +60,17 @@ Apply middleware in explicit order. Verify side effects with tests in `tests/ser
 
 ## Example Paths To Reuse
 
-- Minimal server: `fastmcp-main/examples/simple_echo.py`
-- Config-backed server: `fastmcp-main/examples/config_server.py`
-- Mounting/composition: `fastmcp-main/examples/mount_example.py`
-- Tags/visibility: `fastmcp-main/examples/tags_example.py`
-- Versioning: `fastmcp-main/examples/versioning`
+- Minimal server: `examples/simple_echo.py`
+- Config-backed server: `examples/config_server.py`
+- Mounting/composition: `examples/mount_example.py`
+- Tags/visibility: `examples/tags_example.py`
+- Versioning: `examples/versioning`
 
 ## Tests That Define Expected Behavior
 
-- `fastmcp-main/tests/server/test_providers.py`
-- `fastmcp-main/tests/server/test_dependencies.py`
-- `fastmcp-main/tests/server/test_pagination.py`
-- `fastmcp-main/tests/server/test_logging.py`
-- `fastmcp-main/tests/server/tasks`
-- `fastmcp-main/tests/server/auth`
+- `tests/server/test_providers.py`
+- `tests/server/test_dependencies.py`
+- `tests/server/test_pagination.py`
+- `tests/server/test_logging.py`
+- `tests/server/tasks`
+- `tests/server/auth`

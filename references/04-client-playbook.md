@@ -2,23 +2,23 @@
 
 ## Core Docs
 
-- `fastmcpdocs/clients/client.md`
-- `fastmcpdocs/clients/transports.md`
-- `fastmcpdocs/clients/tools.md`
-- `fastmcpdocs/clients/resources.md`
-- `fastmcpdocs/clients/prompts.md`
-- `fastmcpdocs/clients/tasks.md`
-- `fastmcpdocs/clients/auth/oauth.md`
-- `fastmcpdocs/clients/auth/bearer.md`
+- `clients/client.md`
+- `clients/transports.md`
+- `clients/tools.md`
+- `clients/resources.md`
+- `clients/prompts.md`
+- `clients/tasks.md`
+- `clients/auth/oauth.md`
+- `clients/auth/bearer.md`
 
 ## Core Source Modules
 
-- Main client: `fastmcp-main/src/fastmcp/client/client.py`
-- Transport inference: `fastmcp-main/src/fastmcp/client/transports/inference.py`
-- HTTP transport: `fastmcp-main/src/fastmcp/client/transports/http.py`
-- SSE transport: `fastmcp-main/src/fastmcp/client/transports/sse.py`
-- Stdio transport: `fastmcp-main/src/fastmcp/client/transports/stdio.py`
-- In-memory transport: `fastmcp-main/src/fastmcp/client/transports/memory.py`
+- Main client: `src/fastmcp/client/client.py`
+- Transport inference: `src/fastmcp/client/transports/inference.py`
+- HTTP transport: `src/fastmcp/client/transports/http.py`
+- SSE transport: `src/fastmcp/client/transports/sse.py`
+- Stdio transport: `src/fastmcp/client/transports/stdio.py`
+- In-memory transport: `src/fastmcp/client/transports/memory.py`
 
 ## Client Lifecycle Pattern
 
@@ -54,15 +54,15 @@ Attach handlers when your client needs streaming-like updates, tool delegation, 
 
 ## Example Paths To Reuse
 
-- Proxy and in-memory client flow: `fastmcp-main/examples/in_memory_proxy_example.py`
-- Persistent state client: `fastmcp-main/examples/persistent_state/client.py`
-- Task client: `fastmcp-main/examples/tasks/client.py`
-- Auth clients: `fastmcp-main/examples/auth/*/client.py`
+- Proxy and in-memory client flow: `examples/in_memory_proxy_example.py`
+- Persistent state client: `examples/persistent_state/client.py`
+- Task client: `examples/tasks/client.py`
+- Auth clients: `examples/auth/*/client.py`
 
 ## Tests That Define Expected Behavior
 
-- `fastmcp-main/tests/client/client/test_client.py`
-- `fastmcp-main/tests/client/transports/test_transports.py`
-- `fastmcp-main/tests/client/test_roots.py`
-- `fastmcp-main/tests/client/auth/test_oauth_client.py`
-- `fastmcp-main/tests/client/test_sampling.py`
+- `tests/client/client/test_client.py`
+- `tests/client/transports/test_transports.py`
+- `tests/client/test_roots.py`
+- `tests/client/auth/test_oauth_client.py`
+- `tests/client/test_sampling.py`

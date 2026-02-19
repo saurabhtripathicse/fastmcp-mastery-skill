@@ -1,6 +1,6 @@
 # Architecture And Layout
 
-## Analyzed Documentation Folders (`fastmcpdocs`)
+## Analyzed Documentation Folders (`docs`)
 
 This folder is a markdown export/mirror of FastMCP documentation.
 
@@ -17,7 +17,7 @@ This folder is a markdown export/mirror of FastMCP documentation.
 | `root` | 2 | Changelog/updates pages |
 | `servers` | 38 | Core server concepts, features, auth, providers, transforms |
 
-## Source Repository Layout (`fastmcp-main`)
+## Source Repository Layout (`repo`)
 
 | Path | What it contains |
 |---|---|
@@ -43,7 +43,7 @@ This folder is a markdown export/mirror of FastMCP documentation.
 
 Use this chain for every feature:
 
-1. Find conceptual page in `fastmcpdocs`.
+1. Find conceptual page in `docs`.
 2. Map to source module in `src/fastmcp`.
 3. Open matching example in `examples`.
 4. Confirm expected behavior in `tests`.
@@ -52,7 +52,7 @@ This avoids stale assumptions from docs-only reading and reduces implementation 
 
 ## Important Note About `python-sdk`
 
-`fastmcpdocs/python-sdk` is API reference output. It is not hand-written guide content.
+`python-sdk` is API reference output. It is not hand-written guide content.
 
 - Best for: signatures, class/method inventory, source links.
 - Less ideal for: choosing patterns or architecture.

@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Generate a local FastMCP docs-to-code crosswalk markdown file.
 
-This script is intended for the fastmcp-mastery skill and expects a workspace
-that contains both:
-- fastmcpdocs
-- fastmcp-main
+Inputs are explicit:
+- docs root: exported FastMCP docs directory
+- source repo: FastMCP source repository root
 """
 
 from __future__ import annotations
@@ -28,7 +27,7 @@ def map_non_sdk_doc_to_mdx(doc_rel: Path, docs_root: Path) -> Path | None:
     if mapped.exists():
         return mapped
 
-    # fastmcpdocs/root/*.md correspond to docs/*.mdx
+    # root/*.md in the docs export correspond to docs/*.mdx
     if doc_rel.parts and doc_rel.parts[0] == "root":
         root_level = docs_root / (doc_rel.stem + ".mdx")
         if root_level.exists():
@@ -121,18 +120,18 @@ def build_markdown(
     lines.append("")
     lines.append("## Inputs")
     lines.append("")
-    lines.append(f"- docs root: `{docs_root}`")
-    lines.append(f"- source repo: `{source_repo}`")
+    lines.append("- docs root: provided via `--docs-root`")
+    lines.append("- source repo: provided via `--source-repo`")
     lines.append("")
     lines.append("## High-Level Totals")
     lines.append("")
-    lines.append(f"- `fastmcpdocs` markdown files: **{len(list(docs_root.rglob('*.md')))}**")
+    lines.append(f"- markdown files in docs root: **{len(list(docs_root.rglob('*.md')))}**")
     lines.append(f"- non-`python-sdk` docs pages: **{len(non_sdk_docs)}**")
     lines.append(f"- `python-sdk` API pages: **{len(python_sdk_docs)}**")
     lines.append(f"- unresolved non-`python-sdk` mappings: **{len(unresolved_non_sdk)}**")
     lines.append(f"- unresolved `python-sdk` mappings: **{len(unresolved_sdk)}**")
     lines.append("")
-    lines.append("## `fastmcpdocs` Folder File Counts")
+    lines.append("## Docs Root Folder File Counts")
     lines.append("")
     lines.append("| Folder | Files |")
     lines.append("|---|---:|")
@@ -162,14 +161,14 @@ def build_markdown(
     lines.append("")
     lines.append("## Non-`python-sdk` Doc to Source-Docs Mapping")
     lines.append("")
-    lines.append("| Page (`fastmcpdocs`) | Mapped (`fastmcp-main`) |")
+    lines.append("| Docs page | Mapped source docs path |")
     lines.append("|---|---|")
     for page, mapped in non_sdk_rows:
         lines.append(f"| `{page}` | `{mapped}` |" if mapped else f"| `{page}` | `UNMAPPED` |")
     lines.append("")
     lines.append("## `python-sdk` Doc to Source-Code Mapping")
     lines.append("")
-    lines.append("| API Page (`fastmcpdocs/python-sdk`) | Mapped Module (`fastmcp-main/src`) |")
+    lines.append("| API page (`python-sdk`) | Mapped source module (`src`) |")
     lines.append("|---|---|")
     for page, mapped in sdk_rows:
         lines.append(f"| `{page}` | `{mapped}` |" if mapped else f"| `{page}` | `UNMAPPED` |")
@@ -183,20 +182,18 @@ def build_markdown(
 def main() -> None:
     script_dir = Path(__file__).resolve().parent
     skill_root = script_dir.parent
-    default_docs_root = Path.cwd() / "fastmcpdocs"
-    default_source_repo = Path.cwd() / "fastmcp-main"
     default_output = skill_root / "references" / "02-doc-code-crosswalk-generated.md"
 
     parser = argparse.ArgumentParser(description="Generate a FastMCP docs-to-code crosswalk file.")
     parser.add_argument(
         "--docs-root",
-        default=str(default_docs_root),
-        help="Path to fastmcpdocs directory",
+        required=True,
+        help="Path to docs directory",
     )
     parser.add_argument(
         "--source-repo",
-        default=str(default_source_repo),
-        help="Path to fastmcp-main repository root",
+        required=True,
+        help="Path to source repository",
     )
     parser.add_argument(
         "--output",

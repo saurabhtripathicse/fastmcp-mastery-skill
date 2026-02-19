@@ -19,19 +19,19 @@ Use this guide to analyze FastMCP quickly without loading all docs at once.
 
 | If the user asks about... | Start with | Then verify in |
 |---|---|---|
-| Basic "how to build a server" | `03-server-playbook.md` | `fastmcp-main/examples/simple_echo.py` |
-| Tool/resource/prompt registration | `03-server-playbook.md` | `fastmcp-main/src/fastmcp/server/server.py` |
-| Client transports and calls | `04-client-playbook.md` | `fastmcp-main/src/fastmcp/client/transports` |
-| OAuth, token verification, auth providers | `05-auth-providers-transforms-tasks.md` | `fastmcp-main/src/fastmcp/server/auth` |
-| Dynamic capabilities and composition | `05-auth-providers-transforms-tasks.md` | `fastmcp-main/src/fastmcp/server/providers` |
-| fastmcp CLI usage | `06-cli-config-deployment-integrations.md` | `fastmcp-main/src/fastmcp/cli` |
-| Real usage patterns | `07-example-catalog.md` | `fastmcp-main/examples` |
-| Regression risk / expected behavior | `09-testing-and-debugging.md` | `fastmcp-main/tests` |
+| Basic "how to build a server" | `03-server-playbook.md` | `examples/simple_echo.py` |
+| Tool/resource/prompt registration | `03-server-playbook.md` | `src/fastmcp/server/server.py` |
+| Client transports and calls | `04-client-playbook.md` | `src/fastmcp/client/transports` |
+| OAuth, token verification, auth providers | `05-auth-providers-transforms-tasks.md` | `src/fastmcp/server/auth` |
+| Dynamic capabilities and composition | `05-auth-providers-transforms-tasks.md` | `src/fastmcp/server/providers` |
+| fastmcp CLI usage | `06-cli-config-deployment-integrations.md` | `src/fastmcp/cli` |
+| Real usage patterns | `07-example-catalog.md` | `examples` |
+| Regression risk / expected behavior | `09-testing-and-debugging.md` | `tests` |
 
 ## High-Signal Paths
 
-- Primary docs mirror: `fastmcpdocs`
-- Canonical docs source: `fastmcp-main/docs`
-- Python SDK source: `fastmcp-main/src/fastmcp`
-- Runnable examples: `fastmcp-main/examples`
-- Behavioral contract: `fastmcp-main/tests`
+- Primary docs mirror: `docs`
+- Canonical docs source: `docs`
+- Python SDK source: `src/fastmcp`
+- Runnable examples: `examples`
+- Behavioral contract: `tests`

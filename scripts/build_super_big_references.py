@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build super-big FastMCP reference artifacts for the fastmcp-mastery skill.
 
-This script generates exhaustive, derived markdown indexes from local inputs:
-- fastmcpdocs
-- fastmcp-main
+This script generates exhaustive, derived markdown indexes from explicit inputs:
+- docs root
+- source repo root
 """
 
 from __future__ import annotations
@@ -437,20 +437,18 @@ def build_examples_tests_matrix(
 def main() -> None:
     script_dir = Path(__file__).resolve().parent
     skill_root = script_dir.parent
-    default_docs_root = Path.cwd() / "fastmcpdocs"
-    default_source_repo = Path.cwd() / "fastmcp-main"
     default_output_dir = skill_root / "references"
 
     parser = argparse.ArgumentParser(description="Generate super-big FastMCP reference artifacts.")
     parser.add_argument(
         "--docs-root",
-        default=str(default_docs_root),
-        help="Path to fastmcpdocs",
+        required=True,
+        help="Path to docs root",
     )
     parser.add_argument(
         "--source-repo",
-        default=str(default_source_repo),
-        help="Path to fastmcp-main",
+        required=True,
+        help="Path to source repo root",
     )
     parser.add_argument(
         "--output-dir",
@@ -462,6 +460,11 @@ def main() -> None:
     docs_root = Path(args.docs_root).expanduser()
     source_repo = Path(args.source_repo).expanduser()
     output_dir = Path(args.output_dir).expanduser()
+
+    if not docs_root.exists():
+        raise SystemExit(f"docs root not found: {docs_root}")
+    if not source_repo.exists():
+        raise SystemExit(f"source repo not found: {source_repo}")
 
     source_docs_root = source_repo / "docs"
     source_src_root = source_repo / "src"

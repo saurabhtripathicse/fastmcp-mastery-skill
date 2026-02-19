@@ -2,10 +2,12 @@
 
 A super-sized Codex skill for working with FastMCP using local evidence from:
 
-- `fastmcpdocs` (documentation mirror)
-- `fastmcp-main` (source code, examples, tests)
+- `docs` (documentation mirror)
+- `repo` (source code, examples, tests)
 
 This skill is designed to reduce hallucination risk by forcing docs -> source -> examples -> tests cross-checking.
+
+No specific directory names are required. `docs` and `repo` are logical inputs, not fixed folder names.
 
 ## Contents
 
@@ -24,17 +26,25 @@ This skill is designed to reduce hallucination risk by forcing docs -> source ->
 
 ## Regenerate Indexes
 
-Run when `fastmcpdocs` or `fastmcp-main` changes:
+Run when `docs` or `repo` changes:
 
 ```bash
-python3 scripts/build_fastmcp_crosswalk.py
-python3 scripts/build_super_big_references.py
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/docs-root --source-repo /path/to/source-repo
+python3 scripts/build_super_big_references.py --docs-root /path/to/docs-root --source-repo /path/to/source-repo
 ```
 
 ## Validate Skill
 
 ```bash
 python3 "$CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" .
+```
+
+## Install In Codex
+
+```bash
+python3 "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
+  --url https://github.com/<owner>/<repo>.git \
+  --method git
 ```
 
 ## Repository Notes

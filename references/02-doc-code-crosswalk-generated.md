@@ -1,21 +1,21 @@
 # Generated FastMCP Crosswalk
 
-Generated at: `2026-02-19 20:09:50Z`
+Generated at: `2026-02-19 20:23:15Z`
 
 ## Inputs
 
-- docs root: `../../fastmcpdocs`
-- source repo: `../../fastmcp-main`
+- docs root: provided via `--docs-root`
+- source repo: provided via `--source-repo`
 
 ## High-Level Totals
 
-- `fastmcpdocs` markdown files: **309**
+- markdown files in docs root: **309**
 - non-`python-sdk` docs pages: **101**
 - `python-sdk` API pages: **208**
 - unresolved non-`python-sdk` mappings: **0**
 - unresolved `python-sdk` mappings: **0**
 
-## `fastmcpdocs` Folder File Counts
+## Docs Root Folder File Counts
 
 | Folder | Files |
 |---|---:|
@@ -97,7 +97,7 @@ Generated at: `2026-02-19 20:09:50Z`
 
 ## Non-`python-sdk` Doc to Source-Docs Mapping
 
-| Page (`fastmcpdocs`) | Mapped (`fastmcp-main`) |
+| Docs page | Mapped source docs path |
 |---|---|
 | `apps/low-level.md` | `docs/apps/low-level.mdx` |
 | `apps/overview.md` | `docs/apps/overview.mdx` |
@@ -203,7 +203,7 @@ Generated at: `2026-02-19 20:09:50Z`
 
 ## `python-sdk` Doc to Source-Code Mapping
 
-| API Page (`fastmcpdocs/python-sdk`) | Mapped Module (`fastmcp-main/src`) |
+| API page (`python-sdk`) | Mapped source module (`src`) |
 |---|---|
 | `python-sdk/fastmcp-cli-__init__.md` | `src/fastmcp/cli/__init__.py` |
 | `python-sdk/fastmcp-cli-auth.md` | `src/fastmcp/cli/auth.py` |

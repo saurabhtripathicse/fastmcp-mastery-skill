@@ -3,7 +3,7 @@
 ## Coverage Summary
 
 - Non-`python-sdk` documentation pages analyzed: `101`
-- Pages mapping directly to `fastmcp-main/docs/*.mdx`: `99`
+- Pages mapping directly to `docs/*.mdx`: `99`
 - Special root mappings: `root/changelog.md` -> `docs/changelog.mdx`, `root/updates.md` -> `docs/updates.mdx`
 - `python-sdk` pages analyzed: `208`
 - `python-sdk` pages mapped to `src/fastmcp/*`: `208`
@@ -48,7 +48,7 @@
 Run this command to produce a complete machine-generated mapping table for every file:
 
 ```bash
-python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/fastmcpdocs --source-repo /path/to/fastmcp-main
+python3 scripts/build_fastmcp_crosswalk.py --docs-root /path/to/docs --source-repo /path/to/repo
 ```
 
 Generated file:
