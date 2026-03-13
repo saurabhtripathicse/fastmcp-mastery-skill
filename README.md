@@ -1,6 +1,6 @@
 # FastMCP Mastery Skill
 
-A super-sized FastMCP skill package for Codex, Claude, Cursor, Windsurf, Cline, and Replit.
+A super-sized FastMCP skill package for Kiro, Codex, Claude, Cursor, Windsurf, Cline, and Replit.
 
 This repository is designed to reduce hallucinations by forcing docs -> source -> examples -> tests cross-checking.
 
